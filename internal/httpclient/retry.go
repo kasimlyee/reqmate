@@ -1,7 +1,6 @@
 package httpclient
 
 import (
-	"context"
 	"net/http"
 	"time"
 )
