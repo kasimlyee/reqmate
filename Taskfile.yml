@@ -1,0 +1,28 @@
+version: '3'
+
+tasks:
+  build:
+    desc: Build the binary
+    cmds:
+      - go build -o bin/reqmate ./cmd/reqmate
+
+  test:
+    desc: Run tests
+    cmds:
+      - go test -v -race -cover ./...
+
+  lint:
+    desc: Run linters
+    cmds:
+      - golangci-lint run
+
+  cover:
+    desc: Run tests with coverage
+    cmds:
+      - go test -v -race -coverprofile=coverage.out ./...
+      - go tool cover -html=coverage.out
+
+  release:
+    desc: Create a release
+    cmds:
+      - goreleaser release --rm-dist --snapshot --skip-publish

@@ -1,0 +1,34 @@
+version: 0.1.0
+run:
+  timeout: 5m
+  modules-download-mode: readonly
+
+linters:
+  enable:
+    - errcheck
+    - govet
+    - staticcheck
+    - gosimple
+    - typecheck
+    - unused
+    - gofmt
+    - goimports
+    - revive
+    - bodyclose
+    - gocritic
+    - goconst
+    - gocyclo
+    - dogsled
+    - dupl
+    - funlen
+    - gochecknoinits
+    - gochecknoglobals
+    - nakedret
+    - prealloc
+    - scopelint
+    - stylecheck
+    - whitespace
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
